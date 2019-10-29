@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file is part of Chummer5a.
+
+    Chummer5a is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Chummer5a is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Chummer5a.  If not, see <http://www.gnu.org/licenses />.
+
+    You can obtain the full source code for Chummer5a at
+    https://github.com/chummer5a/chummer5a
+-->
+<!-- created by DelnarErsike 	2018-Sep-29
+     Updates by Razh			2019-Sep-30
+		Updates for the most recent quality rules on runnerhub wiki.
+	 -->
+<chummer>
+  <qualities>
+    <!--
+      Altered Positive
+    -->
+	<!--
+	What if any should be chargen only?
+	-->
+    <quality>
+      <name>Alibi</name>
+      <bonus amendoperation="replace" addifnotfound="True">
+        <specificskill>
+          <name>Con</name>
+          <bonus>2</bonus>
+        </specificskill>
+      </bonus>
+    </quality>
+	<quality>
+      <name>Astral Bouncer</name>
+	  <notes>The additional information may be selected from the following list:
+      - All assensable Positive Qualities (as determined by the GM)
+      - All assensable Negative Qualities (as determined by the GM)
+      - Physical Attribute Ratings
+      - Mental Attribute Ratings
+      - Initiate Grade
+      - An Initiate Power
+      - An Adept Power  
+	  </notes>
+    </quality>
+    <quality>
+      <name>Biocompatability (Cyberware)</name>
+	  <notes>Characters may purchase Biocompatibility post gen using normal quality purchase rules. It instantly applies to all installed 'ware, granting an appropriately sized essence hole. 
+	  </notes>
+    </quality>
+    <quality>
+      <name>Biocompatability (Bioware)</name>
+	  <notes>Characters may purchase Biocompatibility post gen using normal quality purchase rules. It instantly applies to all installed 'ware, granting an appropriately sized essence hole. 
+	  </notes>
+    </quality>
+    <quality>
+      <name>Black Market Pipeline</name>
+	  <notes>This applies at chargen, but only to items within a given category. For example, with the category of Vehicles, vehicle mods would not count; with the category of Electronics, modifications for glasses or cameras would count. 
+	  </notes>
+    </quality>
+	<quality>
+      <name>Candle in the Darkness</name>
+	  <required amendoperation="replace" addifnotfound="True">
+	    <oneof>
+		  <quality>Code of Honor</quality>
+          <quality>Code of Honor: Like a Boss</quality>
+		</oneof>
+	  </required>
+	  <notes>Only the 15 karma Codes of Honor count for this quality. Loyalty gained from this quality is capped at 6. Contacts whose loyalty is reduced to 0 are lost. If the associated Code of Honor is broken and the option to correct the break in a run, a solo must be completed to earn forgiveness. 
+	  </notes>
+    </quality>
+	<quality>
+      <name>Corporate Loyalist</name>
+      <required amendoperation="replace" addifnotfound="True">
+        <oneof>
+          <quality>SINner (Corporate)</quality>
+          <quality>SINner (Corporate Limited)</quality>
+        </oneof>
+      </required>
+    </quality>
+	<quality>
+      <name>Dealer Connection</name>
+	  <notes>This applies at chargen, but only to the base costs of the vehicles/drones a character purchases, not any modifications or accessories.
+	  </notes>
+    </quality>
+	<quality>
+      <name>Dual-Natured Defender</name>
+	  <notes>Toggling Astral Perception with this quality is a simple action as normal.
+	  </notes>
+    </quality> 
+	<quality>
+      <name>Elemental Master</name>
+	  <notes>For these powers, Air corresponds to the Electricity damage type, Water to Cold, Earth to Acid, and Fire to ... Fire.
+	  </notes>
+    </quality>
+		<quality>
+      <name>Fame: Megacorporate</name>
+	  <notes>Available only on snowflake slot characters.	
+	  </notes>
+    </quality>
+	<quality>
+      <name>Fame: Global</name>
+	  <notes>Available only on snowflake slot characters.	
+	  </notes>
+    </quality>
+	<quality>
+      <name>Fractal Punch</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	<quality>
+      <name>Hold the Door</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	<quality>
+      <name>Home Ground</name>
+      <notes>The selected benefit applies to an entire district of Seattle (Renton, Bellevue, Snohomish, etc.)  When using the Digital Turf option, players cannot own a Host, but do have full legal access at either the user or sysop level to the Host with all the applicable boons and considerations. The Host in question is considered to be an R1 Data Hosts with stats decided by the player at time of purchase. 
+      </notes>
+    </quality>
+    <quality>
+      <name>I C U</name>
+      <notes>Note that you need to have visual sight on the target in the physical world to get the bonus. 
+      </notes>
+    </quality>
+	<quality>
+      <name>Lone Wolf</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	<quality>
+      <name>Massive Network</name>
+	  <notes>The price reduction from this quality does not apply to Runnerhub contacts purchased post-gen. 
+	  </notes>
+    </quality>
+	<quality>
+      <name>Networker</name>
+	  <notes>The price reduction from this quality does not apply to Runnerhub contacts purchased post-gen. 
+	  </notes>
+    </quality>
+	<quality xpathfilter="name = 'Lightning Reflexes'" amendoperation="replace">
+      <id>3564b678-7721-4a8d-ac79-1600cf92dc14</id>
+      <name>Lightning Reflexes</name>
+      <karma>20</karma>
+      <category>Positive</category>
+	  <doublecareer>False</doublecareer>
+	  <bonus>
+        <dodge>1</dodge>
+        <initiative precedence="0">1</initiative>
+        <initiativepass precedence="0">1</initiativepass>
+      </bonus>
+      <source>RF</source>
+      <page>148</page>
+    </quality>
+	<quality>
+      <id>45be40cc-a21a-4771-b47d-a532ea60b205</id>
+      <name>Made Man</name>
+      <bonus amendoperation="replace" addifnotfound="True">
+        <mademan />
+        <addcontact>
+          <connection>4</connection>
+          <loyalty>3</loyalty>
+          <free />
+        </addcontact>
+      </bonus>
+	  <notes>For mechanical purposes, treat the group contact the same as an individual contact. See also the notes on group contacts.
+
+Approved Organizations for Made Man are any branch of the following groups:
+
+    Cutters
+    Laesa
+    Mafia
+    Seoulpa Rings
+    Tamanous
+    Triads
+    Vory
+    Yakuza</notes>
+    </quality>
+	
+	<quality>
+      <name>Master Debater</name>
+	  <notes>This quality allows the character to substitute Logic for Charisma in their Negotiation rolls.  
+	  </notes>
+    </quality>
+	<quality>
+      <name>Mystic Foreman</name>
+	  <notes>Industrial Engineering is a Knowledge skill (Industrial Mechanic the active skill can be used in place of this knowledge skill) and Chemistry is an Active skill.
+	  </notes>
+    </quality>
+	<quality>
+      <name>Null Wizard</name>
+      <bonus>
+        <skilldisable amendoperation="addnode">Summoning</skilldisable>
+      </bonus>
+    </quality>
+	<quality>
+      <name>Otaku to Technomancer</name>
+      <chargenonly />
+	  <notes>This quality can only be taken at Character Creation (Chargen) and characters which possess it must either have a datajack or an Essence Hole of at least 0.1.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Pacifist Adept</name>
+	  <required amendoperation="replace" addifnotfound="True">
+        <allof>
+          <attribute>
+            <name>MAG</name>
+            <total>1</total>
+          </attribute>
+          <power>Cool Resolve</power>
+          <quality>Pacifist I</quality>
+        </allof>
+      </required>
+	  <forbidden amendoperation="replace" addifnotfound="True">
+        <oneof>
+          <quality>Pacifist II</quality>
+        </oneof>
+      </forbidden>
+	</quality>
+	<quality>
+	  <name>Practice, Practice, Practice</name>
+	  <notes>This quality only applies to the the Physical, Social, or Mental limits of a skill. Any Hub contacts with the Aptitude quality can provide this quality for any of their associated skills
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Practiced Alchemist</name>
+	  <karma amendoperation="replace" addifnotfound="True">10</karma>
+	</quality>
+	<quality xpathfilter="name = 'Prototype Transhuman'" amendoperation="replace">
+      <id>08c4dfad-3661-48d9-a265-43cce84e20d8</id>
+      <name>Prototype Transhuman</name>
+      <karma>10</karma>
+      <category>Positive</category>
+      <bonus>
+        <prototypetranshuman>1</prototypetranshuman>
+        <selectquality>
+          <quality>Allergy (Common, Mild)</quality>
+		  <quality>Allergy (Uncommon, Moderate)</quality>
+          <quality>Astral Beacon</quality>
+		  <quality>Blighted (12 Months)</quality>
+		  <quality>Blind</quality>
+		  <quality>Deaf</quality>
+		  <quality>Dimmer Bulb</quality>
+		  <quality>Illness</quality>
+		  <quality>Incomplete Deprogramming</quality>
+          <quality>Insomnia (Basic)</quality>
+		  <quality>Low Pain Tolerance</quality>
+		  <quality>Paraplegic</quality>
+		  <quality>Phobia (Common, Moderate)</quality>
+		  <quality>Poor Self Control (Combat Monster)</quality>
+		  <quality>Poor Self Control (Compulsive III, Public Broad Aspect)</quality>
+		  <quality>Poor Self Control (Compulsive IV, Personal)</quality>
+		  <quality>Reduced Sense (Touch)</quality>
+		  <quality>Sensitive System</quality>
+		  <quality>Weak Immune System</quality>
+        </selectquality>
+      </bonus>
+      <source>CF</source>
+      <page>54</page>
+	  <notes>Add a note to the quality so that CCD can tell it was added by Prototype Transhuman. Dimmer Bulb and Illness will both have to be manually altered to indicate the second level given by the quality.  In the xml, simply dupilicate the entire entry for Dimmer Bulb or Illness so there are two copies.
+	  </notes>
+    </quality>
+	<quality>
+      <id>7297d8b0-8bb8-4d7a-ab10-2d4e4381e5d0</id>
+      <name>Prime Datahaven Membership</name>
+      <bonus amendoperation="replace" addifnotfound="True">
+        <addcontact>
+          <connection>5</connection>
+          <loyalty>3</loyalty>
+          <free />
+        </addcontact>
+      </bonus>
+    </quality>
+	<quality>
+	  <name>Quick Healer</name>
+	  <notes>This quality only applies to healing tests made on the character with the quality, and not to any healing tests the character performs on anyone else.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Redliner</name>
+	  <notes>The Strength and Agility bonuses apply to all of the character’s cyberlimbs, without affecting their meat stats. Keep in mind that the augmented attribute maximum also applies!
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Restricted Gear</name>
+	  <notes>This quality requires explicit CCD approval and may be denied without further comment. In general, it is more likely to be approved when used for flavorful gear that ties well into a character's background, whereas attempts to simply use it to maximize a character's power are very likely to be denied. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Sensei</name>
+	  <notes>Contacts that are used with this quality have access to the Sensei Archetype Power. This quality is not required in order to purchase Runnerhub contacts which have the Sensei Archetype.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Sharpshooter</name>
+	  <notes>This quality applies both its benefit and drawback to melee attacks.
+Special Modifications
+
+Elemental weaponry cannot be changed to Acid, Radiation, or Pollution damage types. Weapons which do not intrinsically possess an elemtental damage type cannot have one applied as an effect of this quality.
+
+The Damage, AP, Concealability, and Reach stats on any weapon may be modified. Reach only affects Melee attacks, such as strikes with the butt of a rifle, when applied to Ranged weapons. Modifying Concealability or Reach does not alter the actual size of a weapon.
+
+Recoil Compensation may only be applied to Ranged weapons.
+
+Ammo capacity may only be modified on Ranged weapons, or on Melee weapons with a battery capacity.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Spirit Hunter</name>
+	  <notes>Innate powers that cannot be deactivated do not go away (sapience, energy aura, astral form, etc..), but actively used powers are disabled (accident, confusion, elemental attack, etc.)
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Strive For Perfection</name>
+	  <notes>The character must make called shots, unless using some other form of special attack such as Suppressing Fire, multiple attacks, or Nerve Strike. They may use any weapon, including unarmed attacks, with the advantage that it halves the penalty for any called shot. When combined with other ways to reduce the called shot penalty, apply this quality’s effects after the other reductions are applied. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Stalwart Ally</name>
+	  <notes>"A Long Time" is counted as 6 months. 
+	  </notes>
+	</quality>
+	<quality>
+      <name>Team Player</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	<quality>
+      <name>Trust Fund I</name>
+	  <required>
+	    <oneof>
+		  <quality amendoperation="addnode">SINner (Corporate Limited)</quality>
+		</oneof>
+	  </required>
+	</quality>
+	<quality>
+      <name>Trust Fund II</name>
+	  <required>
+	    <oneof>
+		  <quality amendoperation="addnode">SINner (Corporate Limited)</quality>
+		</oneof>
+	  </required>
+	</quality>
+	<quality>
+      <name>Trust Fund III</name>
+	  <required>
+	    <oneof>
+		  <quality amendoperation="addnode">SINner (Corporate Limited)</quality>
+		</oneof>
+	  </required>
+	</quality>
+	<quality>
+      <name>Trust Fund IV</name>
+	  <required>
+	    <oneof>
+		  <quality amendoperation="addnode">SINner (Corporate Limited)</quality>
+		</oneof>
+	  </required>
+	</quality>
+	<quality>
+      <name>Trust Data, Not Lore</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	<quality>
+      <name>Trust Lore, Not Data</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	<quality>
+      <name>Unique Avatar</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	
+	<!--Banned PosQuals -->
+	<quality>
+      <name>Barehand Adept</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+      <name>Better to be Feared Than Loved</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+    <quality>
+      <name>Community Connection</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+    <quality>
+      <name>Erased</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+    <quality>
+      <name>Friends in High Places</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+    <quality>
+      <name>Groveler</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+    <quality>
+      <name>Revels in Murder</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<!-- /Banned PosQuals -->
+	
+	
+    <quality>
+      <name>Addictions</name>
+	  <notes>Addictions must be to a statted, 'Hub-legal drug, with an addiction rating. Alcohol does not have any addiction rating on Runnerhub, so it is not a legal choice for Addiction. Addictions to simsense (cold- and hot-sim) as well as skillwires are not enforced on Runnerhub, and therefore aren't allowed as subjects for the addiction quality. Please see the rules on drugs usage and addictive substances for more information about the effects of the addiction quality.
+	  </notes>
+	</quality>
+	<quality>
+      <name>Aged</name>
+	  <notes>Dwarf and Elf characters may not take this quality.
+	  </notes>
+	</quality>
+    <quality>
+      <name>Albinism</name>
+	  <notes>Albinism is not a Distinctive Style.
+	  </notes>
+	</quality>
+    <quality>
+      <name>Asthma</name>
+	  <notes>Asthma is not compatible with Allergies to inhaled irritants. This quality is subject to review by CCD.
+	  </notes>
+	</quality>
+    <quality>
+      <name>AVRSE</name>
+	  <notes>A "safe place" is specifically a location marked as a safehouse, or a residence owned by the character as part of a lifestyle.
+	  </notes>
+	</quality>
+    <quality>
+      <name>Bad Rep</name>
+	  <notes>Characters do not want this quality! Bad Rep is Bad News, and this quality may not be taken at chargen. Characters who had this quality at chargen prior to 4 September 2017 are grandfathered in and keep their rep.
+	  </notes>
+	</quality>
+    <quality>
+      <name>Big Baby</name>
+	  <notes>Subject to CCD approval per sheet.
+	  </notes>
+	</quality>
+    <quality>
+      <name>Big Regret</name>
+	  <notes>Subject to CCD approval to ensure it is something reasonably able to be discovered. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Corporate Pariah I</name>
+	  <required amendoperation="replace" addifnotfound="True">
+	    <oneof>
+          <quality>SINner (Corporate Limited)</quality>
+          <quality>SINner (Corporate)</quality>
+		</oneof>
+	  </required>
+	</quality>
+	<quality>
+	  <name>Cyber-snob</name>
+	  <karma amendoperation="replace" addifnotfound="True">-6</karma>
+	  <bonus amendoperation="replace" addifnotfound="True">
+	    <disablebiowaregrade>Standard</disablebiowaregrade>
+        <disablebiowaregrade>Standard (Burnout's Way)</disablebiowaregrade>
+        <disablebiowaregrade>Used</disablebiowaregrade>
+        <disablebiowaregrade>Omegaware</disablebiowaregrade>
+        <disablecyberwaregrade>Standard</disablecyberwaregrade>
+        <disablecyberwaregrade>Standard (Burnout's Way)</disablecyberwaregrade>
+        <disablecyberwaregrade>Used</disablecyberwaregrade>
+        <disablecyberwaregrade>Omegaware</disablecyberwaregrade>
+        <disablecyberwaregrade>Standard (Adapsin)</disablecyberwaregrade>
+        <disablecyberwaregrade>Standard (Burnout's Way) (Adapsin)</disablecyberwaregrade>
+        <disablecyberwaregrade>Used (Adapsin)</disablecyberwaregrade>
+        <disablecyberwaregrade>Omegaware (Adapsin)</disablecyberwaregrade>
+	  </bonus>
+	  <required amendoperation="replace" addifnotfound="True">
+        <oneof>
+          <ess grade="Alphaware,Betaware,Deltaware,Gammaware">1</ess>
+        </oneof>
+      </required>
+	</quality>
+	<quality xpathfilter="starts-with(name,'Dependent')">
+	  <notes>Alcohol and Smoking are no longer allowed to be taken as Dependents instead of Addictions. Being addicted to either one as a character trait should be purely roleplayed.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Distinctive Style</name>
+	    <notes>This quality functions as in RAW, with the following additions:
+
+    If the character covers, removes, or otherwise hides what makes their style distinctive, they take a -1 penalty to all actions until they uncover/wear/show their style.
+    Characters who have this quality as a consequence of a metagenetic quality or from being a metavariant do not suffer the penalty when hiding their style, and suffer only the RAW ramifications of this quality.
+    GMs are encouraged to have NPCs make Memory tests when appropriate and remember that a character with this quality is distinctive, IE memorable, in some way. 
+	  </notes>
+	</quality>
+    <quality>
+      <name>Driven</name>
+	    <notes>Requires CCD approval. 
+		</notes>
+	</quality>
+	<quality>
+      <name>Escaped Custody</name>
+	  <required amendoperation="replace" addifnotfound="True">
+        <allof>
+          <quality>Records on File</quality>
+        </allof>
+      </required>
+	</quality>
+	<quality>
+      <name>Frostbite</name>
+      <bonus amendoperation="replace" addifnotfound="True">
+        <selectskill limittoskill="Computer, Cybercombat, Decompiling, Electronic Warfare, Hacking, Software"></selectskill>
+      </bonus>
+    </quality>
+	<quality>
+	  <name>Incomplete Deprogramming</name>
+	  <notes>This quality requires approval by CCD. On submission of the character, players must provide a description of the alternate identity.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Infirm</name>
+	  <notes>Buying off Infirm does not restore attributes that it lowered when the quality was acquired. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Lazy Fingers</name>
+	  <karma amendoperation="replace" addifnotfound="True">-6</karma>
+	</quality>
+	<quality>
+	  <name>On the Wagon</name>
+      <required>
+        <oneof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+      </required>
+    </quality>
+	<quality>
+	  <name>Pacifist II</name>
+	  <notes>At the 15 karma level, the character is unable to directly facilitate violence at all - including paying for violence to happen or helping someone else procure the means of committing violence.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Poor Self Control (Sadistic)</name>
+	  <notes>This quality requires explicit CCD approval and may be denied without further comment. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Records on File</name>
+	  <limit amendoperation="replace" addifnotfound="True">3</limit>
+	</quality>
+	<quality xpathfilter="starts-with(name,'Reduced Sense')">
+	  <notes>This quality requires explicit CCD approval, and may be denied without further comment. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Signature</name>
+	  <notes>This quality requires CCD approval, and on character submission the player must provide a description of the signature. It must be uniquely used as a signature, and cannot be an item or action which would regularly serve another purpose in combat, as a tool, etc.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Sloppy Code</name>
+	  <notes>Applies to Logic+Sleaze tests and the Hide action
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Spirit Bane</name>
+	  <notes>The selected spirit must be approved by CCD. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Stay Out Of My Way</name>
+	  <notes>This quality requires CCD approval, and may be denied without further comment. The composure test related to this quality may not be applied to other players.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Superhuman Psychosis</name>
+	  <notes>This quality requires explicit CCD approval, and may be denied without further comment. Characters with this quality cannot receive bonuses from leadership or teamwork tests. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>The Goat</name>
+	  <notes>The dice pool modifier is changed to -2 from -1.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Thousand-Yard Stare</name>
+	  <notes>This quality requires CCD approval, and may be denied without further comment.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Trog Traitor</name>
+	  <notes>Keep in mind that characters with this quality take a negative modifier to their Social Limit equal to their Notoriety. Expect what constitutes an ork- or troll-majority area to vary by GM. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Ugly and Doesn't Care</name>
+	  <notes>In order to take this quality, the character must offset the removed point in Charisma by spending at least 1 Attribute Point to increase Charisma to meet the Minimum Atribute requirements.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Unsteady Hands</name>
+	  <notes>It is up to GM discretion whether this quality triggers at the beginning or end of combat.
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Weak Immune System</name>
+	  <notes>This quality applies its effect to Toxins as well as Diseases, increasing their Power by +2. 
+	  </notes>
+	</quality>
+	<quality>
+	  <name>Wired User</name>
+      <required>
+        <allof xpathfilter="quality = 'Technomancer'" amendoperation="remove" />
+	  </required>
+	</quality>
+	
+	<!-- Banned NegQuals -->
+	<quality>
+      <name>Alpha Junkie</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Amnesia (Neural Deletion)</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Bi-Polar</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Borrowed Time</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Carrier (HMHVV Strain II)</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Carrier (HMHVV Straing III)</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Code of Honor: Avenging Angel</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Code of Honor: Black Hat</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Consummate Professional</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Data Liberator</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Day Job (10 hrs)</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Day Job (20 hrs)</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Day Job (40 hrs)</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Dead Emotion</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Dead SIN</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Designated Omega</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Earther</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Echo Chamber</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Elevated Stress</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Emotional Attachment</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Every Man For Himself</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Faceless</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Force of Chaos</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Hung Out to Dry</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Impassive</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>In Debt</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Information Auctioneer</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Latest and Greatest</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Leeeeeeeroy Jenkins</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Pie Iesu Domine. Dona Eis Requiem.</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Pregnant</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Quadriplegic</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Resonant Burnout</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Stolen Gear</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>This Is Your Last Chance</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Tough and Targeted</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>Wanted</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<quality>
+	  <name>'Ware Intolerance</name>
+      <hide />
+	  <notes>Hub Banned</notes>
+    </quality>
+	<!-- /Banned NegQuals -->
+	
+  </qualities>
+</chummer>
